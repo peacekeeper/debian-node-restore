@@ -1,0 +1,31 @@
+Source: node-restore
+Section: web
+Priority: extra
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Markus Sabadello <markus@projectdanube.org>
+Build-Depends:
+ debhelper (>= 8)
+ , dh-buildinfo
+ , nodejs
+Standards-Version: 3.9.6
+Homepage: http://github.com/jcoglan/restore
+Vcs-Git: git://anonscm.debian.org/pkg-javascript/node-restore.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-javascript/node-restore.git
+XS-Testsuite: autopkgtest
+
+Package: node-restore
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , nodejs
+ , libjs-ejs
+ , node-ejs
+ , node-mkdirp
+ , node-redis (>= 0.8.2)
+ , node-async
+Description: Simple remoteStorage server
+ reStore remoteStorage server written for Node.js. It is designed
+ to be compatible with the 0.6 (RemoteStorage-2011.10) and 0.7
+ (RemoteStorage-2012.04, draft-dejong-00) versions of remoteStorage.js.
+ .
+ Node.js is an event-based server-side JavaScript engine.

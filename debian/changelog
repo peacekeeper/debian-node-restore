@@ -1,0 +1,6 @@
+node-restore (0.2.0-1) UNRELEASED; urgency=low
+
+  [ Markus Sabadello ]
+  * Initial release
+
+ -- Markus Sabadello <markus@projectdanube.org>  Mon, 03 Feb 2015 16:14:31 +0100

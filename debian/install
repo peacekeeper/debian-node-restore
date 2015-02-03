@@ -1,0 +1,3 @@
+package.json usr/lib/nodejs/restore/
+lib usr/lib/nodejs/restore/
+debian/server.js usr/lib/nodejs/restore/
