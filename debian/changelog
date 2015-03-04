@@ -1,3 +1,12 @@
+node-restore (0.2.0-2) UNRELEASED; urgency=low
+
+  [ Markus Sabadello ]
+  * Changed storage directory to /var/lib/nodejs/restore/storage
+  * Added Apache configuration
+  * Allow sign-up for storage
+
+ -- Markus Sabadello <markus@vienna>  Wed, 04 Mar 2015 16:42:44 +0100
+
 node-restore (0.2.0-1) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
