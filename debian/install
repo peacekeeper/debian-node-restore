@@ -2,4 +2,4 @@ package.json usr/lib/nodejs/restore/
 lib usr/lib/nodejs/restore/
 debian/server.js usr/lib/nodejs/restore/
 
-debian/config/apache/restore.conf	etc/apache2/conf-available
+debian/config/apache/node-restore.conf	etc/apache2/conf-available

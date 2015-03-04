@@ -8,7 +8,7 @@ case "$1" in
     purge)
         # Remove generated config and log files.
 	rm -f /var/log/node-restore.log*
-	CONF="restore"
+	CONF="node-restore"
 	COMMON_STATE=$(dpkg-query -f '${Status}' -W 'apache2.2-common' 2>/dev/null | awk '{print $3}' || true)
 	if [ -e /usr/share/apache2/apache2-maintscript-helper ] && [ -e /etc/apache2/conf-enabled/$CONF.conf ] ; then
 		. /usr/share/apache2/apache2-maintscript-helper

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. /lib/lsb/init-functions
+
 NODE_ENV="production"
 PORT="8020"
 APP_DIR="/usr/lib/nodejs/restore"
@@ -49,10 +51,10 @@ start_it() {
     mkdir -p "$PID_DIR"
     mkdir -p "$LOG_DIR"
 
-    echo "Starting node app ..."
+    echo "Starting node-restore ..."
     PORT="$PORT" NODE_ENV="$NODE_ENV" NODE_CONFIG_DIR="$CONFIG_DIR" $NODE_EXEC "$APP_DIR/$NODE_APP"  1>"$LOG_FILE" 2>&1 &
     echo $! > "$PID_FILE"
-    echo "Node app started with pid $!"
+    echo "node-restore started with pid $!"
 }
 
 stop_process() {
@@ -153,6 +155,11 @@ case "$1" in
     ;;
 
     restart)
+        stop_app
+        start_app
+    ;;
+
+    force-reload)
         stop_app
         start_app
     ;;
