@@ -1,3 +1,10 @@
+node-restore (0.2.0-3) UNRELEASED; urgency=low
+
+  [ Markus Sabadello ]
+  * Remove storage files after purge.
+
+ -- Markus Sabadello <markus@projectdanube.org>  Thu, 05 Mar 2015 15:28:58 +0100
+
 node-restore (0.2.0-2) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]

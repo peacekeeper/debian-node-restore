@@ -16,6 +16,8 @@ case "$1" in
 	elif [ "$COMMON_STATE" = "installed" ] || [ "$COMMON_STATE" = "unpacked" ] ; then
 		[ -L /etc/apache2/conf.d/$CONF.conf ] && rm /etc/apache2/conf.d/$CONF.conf
 	fi
+	# Remove storage files.
+	rm -rf /var/lib/nodejs/restore
     ;;
 
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
