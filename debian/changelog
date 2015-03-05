@@ -1,3 +1,10 @@
+node-restore (0.2.0-4) UNRELEASED; urgency=low
+
+  [ Markus Sabadello ]
+  * More reliably disabling Apache2 conf.
+
+ -- Markus Sabadello <markus@projectdanube.org>  Thu, 05 Mar 2015 15:50:23 +0100
+
 node-restore (0.2.0-3) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
