@@ -1,3 +1,13 @@
+node-restore (0.3.0-1) UNRELEASED; urgency=low
+
+  [ Markus Sabadello ]
+  * New upstream version 0.3.0.
+  * Use "Require all granted" for Apache.
+  * Change <Proxy *> to more restrictive URL.
+  * Map all paths to /restore/.
+
+ -- Markus Sabadello <markus@projectdanube.org>  Fri, 16 Oct 2015 10:43:55 +0200
+
 node-restore (0.2.0-4) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
