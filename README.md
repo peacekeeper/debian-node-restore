@@ -1,4 +1,4 @@
-# reStore [![Build Status](https://secure.travis-ci.org/jcoglan/restore.png)](http://travis-ci.org/jcoglan/restore)
+# reStore [![Build Status](https://secure.travis-ci.org/jcoglan/restore.svg)](http://travis-ci.org/jcoglan/restore)
 
 ### CAVEAT EMPTOR
 
@@ -7,24 +7,24 @@ considered experimental. It has not been widely deployed, and I am in the
 process of rolling it out for personal use and within my company.
 
 As with any alpha-stage storage technology, you MUST expect that it will eat
-your data and take precautions against this. You SHOULD expect that its APIs
-and storage schemas will change before it is labelled stable. I MAY respond to
-bug reports but you MUST NOT expect that I will.
+your data and take precautions against this. You SHOULD expect that its APIs and
+storage schemas will change before it is labelled stable. I MAY respond to bug
+reports but you MUST NOT expect that I will.
 
 Per the MIT license, **usage is entirely at your own risk**.
 
 ## What is this?
 
-reStore [remoteStorage][1] server written for Node.js. It is designed to be
-compatible with the 0.6 ([RemoteStorage-2011.10][2]) and 0.7
-([RemoteStorage-2012.04][3], [draft-dejong-00][4]) versions of
-[remoteStorage.js][5].
+reStore [RemoteStorage][1] server written for Node.js. It is designed to be
+compatible with [RemoteStorage.js][2] from version 0.6 onwards, covering
+versions [RemoteStorage-2011.10][3], [RemoteStorage-2012.04][4], and
+[draft-dejong][5] of the protocol.
 
 [1]: http://www.w3.org/community/unhosted/wiki/RemoteStorage
-[2]: http://www.w3.org/community/unhosted/wiki/RemoteStorage-2011.10
-[3]: http://www.w3.org/community/unhosted/wiki/RemoteStorage-2012.04
-[4]: http://tools.ietf.org/id/draft-dejong-remotestorage-00.txt
-[5]: http://remotestorage.io/
+[2]: http://remotestorage.io/
+[3]: http://www.w3.org/community/unhosted/wiki/RemoteStorage-2011.10
+[4]: http://www.w3.org/community/unhosted/wiki/RemoteStorage-2012.04
+[5]: http://tools.ietf.org/id/draft-dejong-remotestorage.txt
 
 
 ## Installation
@@ -46,11 +46,28 @@ var reStore = require('restore'),
     
     server  = new reStore({
                 store:  store,
-                http:   {port: 8000}
+                http:   {host: '127.0.0.1', port: 8000}
               });
 
 server.boot();
 ```
+
+The `host` option is optional and specifies the hostname the server will listen
+on. Its default value is `0.0.0.0`, meaning it will listen on all interfaces.
+
+The server does not allow users to sign up, out of the box. If you need to allow
+that, use the `allow.signup` option:
+
+```js
+var server = new reStore({
+               store: store,
+               http:  {host: '127.0.0.1', port: 8000},
+               allow: {signup: true}
+             });
+```
+
+If you navigate to `http://localhost:8000/` you should then see a sign-up link
+in the navigation.
 
 
 ### Storage security
@@ -80,7 +97,7 @@ database and to any files containing the database access credentials.
 
 ### Serving over HTTPS
 
-Since remoteStorage is a system for storing arbitrary user-specific data, and
+Since RemoteStorage is a system for storing arbitrary user-specific data, and
 since it makes use of OAuth 2.0, we recommend you serve it over a secure
 connection. You can boot the server to listen for HTTP or HTTPS requests or
 both. This configuration boots the app on two ports, one secure and one
@@ -89,9 +106,13 @@ plaintext:
 ```js
 var server = new reStore({
   store:  store,
-  http:   {port: 8000},
+  http:   {
+    host: '127.0.0.1',
+    port: 8000
+  },
   https:  {
     force:  true,
+    host:   '127.0.0.1',
     port:   4343,
     key:    'path/to/ssl.key',
     cert:   'path/to/ssl.crt',
@@ -132,10 +153,10 @@ behaviour to enforce secure connections.
 reStore supports pluggable storage backends, and comes with two implementations
 out of the box:
 
-* `reStore.FileTree` - Uses the filesystem hierarchy and stores each item in
-  its own individual file. Content and metadata are stored in separate files so
-  the content does not need base64-encoding and can be hand-edited. Must only
-  be run using a single server process.
+* `reStore.FileTree` - Uses the filesystem hierarchy and stores each item in its
+  own individual file. Content and metadata are stored in separate files so the
+  content does not need base64-encoding and can be hand-edited. Must only be run
+  using a single server process.
 * `reStore.Redis` - Stores data in a Redis database, and all stored data is
   base64-encoded. It can be run with any number of server processes.
 
@@ -170,23 +191,21 @@ server.boot();
 
 (The MIT License)
 
-Copyright (c) 2012-2014 James Coglan
+Copyright (c) 2012-2015 James Coglan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the 'Software'), to deal in
 the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
