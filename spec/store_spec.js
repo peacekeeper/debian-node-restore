@@ -273,6 +273,14 @@ JS.Test.describe("Stores", function() { with(this) {
             })
           }})
 
+          it("sets the value if * is given for a non-existent item", function(resume) { with(this) {
+            store.put("boris", "/photos/zipwire", "image/poster", buffer("vertibo"), "*", function() {
+              store.get("boris", "/photos/zipwire", null, function(error, item) {
+                resume(function() { assertEqual( buffer("vertibo"), item.value ) })
+              })
+            })
+          }})
+
           it("sets the value if the given version is current", function(resume) { with(this) {
             store.put("boris", "/photos/election", "image/jpeg", buffer("mayor"), date, function() {
               store.get("boris", "/photos/election", null, function(error, item) {
@@ -283,6 +291,14 @@ JS.Test.describe("Stores", function() { with(this) {
 
           it("does not set the value if the given version is not current", function(resume) { with(this) {
             store.put("boris", "/photos/election", "image/jpeg", buffer("mayor"), oldDate, function() {
+              store.get("boris", "/photos/election", null, function(error, item) {
+                resume(function() { assertEqual( buffer("hair"), item.value ) })
+              })
+            })
+          }})
+
+          it("does not set the value if * is given for an existing item", function(resume) { with(this) {
+            store.put("boris", "/photos/election", "image/jpeg", buffer("mayor"), "*", function() {
               store.get("boris", "/photos/election", null, function(error, item) {
                 resume(function() { assertEqual( buffer("hair"), item.value ) })
               })
@@ -375,7 +391,7 @@ JS.Test.describe("Stores", function() { with(this) {
         describe("for directories", function() { with(this) {
           before(function(resume) { with(this) {
             // Example data taken from http://www.w3.org/community/unhosted/wiki/RemoteStorage-2012.04#GET
-            store.put("boris", "/photos/bar/baz/boo", "text/plain", buffer("some content"), null, function() {
+            store.put("boris", "/photos/bar/qux/boo", "text/plain", buffer("some content"), null, function() {
               store.put("boris", "/photos/bla", "application/json", buffer('{"more": "content"}'), null, function() {
                 store.put("zebcoe", "/tv/shows", "application/json", buffer('{"The Day": "Today"}'), null, resume)
               })
@@ -431,7 +447,7 @@ JS.Test.describe("Stores", function() { with(this) {
       describe("delete", function() { with(this) {
         before(function(resume) { with(this) {
           store.put("boris", "/photos/election", "image/jpeg", buffer("hair"), null, function() {
-            store.put("boris", "/photos/bar/baz/boo", "text/plain", buffer("some content"), null, resume)
+            store.put("boris", "/photos/bar/qux/boo", "text/plain", buffer("some content"), null, resume)
           })
         }})
 
@@ -444,10 +460,10 @@ JS.Test.describe("Stores", function() { with(this) {
         }})
 
         it("removes empty directories when items are deleted", function(resume) { with(this) {
-          store.delete("boris", "/photos/bar/baz/boo", null, function() {
+          store.delete("boris", "/photos/bar/qux/boo", null, function() {
             store.get("boris", "/photos/", null, function(error, items) {
               resume(function() {
-                assertNotEqual( arrayIncluding(objectIncluding({name: "bar/"})), items )
+                assertNotEqual( arrayIncluding(objectIncluding({name: "bar/"})), items.children )
               })
             })
           })
@@ -518,4 +534,3 @@ JS.Test.describe("Stores", function() { with(this) {
     }})
   }})
 }})
-

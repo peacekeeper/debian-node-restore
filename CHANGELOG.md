@@ -1,3 +1,16 @@
+### 0.3.0 / 2015-08-23
+
+* Allow the HTTP/HTTPS listening hostname to be specified
+* Support the `/.well-known/webfinger` endpoint with options extension
+* Support `If-None-Match: *` on `PUT` requests
+* Support passing OAuth tokens via the `access_token` parameter
+* Return `ETag` header with double quotes
+* Return` Access-Control-Expose-Headers` on `GET`/`PUT`/`DELETE`, not just `OPTIONS`
+* Make all the write operations in the Redis backend atomic
+* Fix bugs caused by `url.parse(string, true).query` being undefined
+* Fix incompatibilities with EJS 2.0
+* Fix errors arising from 'state' not being set when rendering OAuth page
+
 ### 0.2.0 / 2014-02-22
 
 * Allow dots in pathnames, but block path traversal attempts

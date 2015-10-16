@@ -5,12 +5,13 @@
 , "keywords"        : ["remoteStorage", "webfinger", "oauth", "webdav"]
 , "license"         : "MIT"
 
-, "version"         : "0.2.0"
+, "version"         : "0.3.0"
 , "engines"         : {"node": ">=0.8.0"}
 , "main"            : "./lib/restore.js"
 
 , "dependencies"    : { "async": ""
-                      , "ejs": ""
+                      , "ejs": ">= 2.0.0"
+                      , "lockfile": ">= 1.0.0"
                       , "mkdirp": ""
                       , "redis": ">= 0.8.2"
                       }
@@ -26,4 +27,3 @@
 
 , "bugs"            : {"url": "http://github.com/jcoglan/restore/issues"}
 }
-
