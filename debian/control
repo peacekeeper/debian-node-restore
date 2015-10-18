@@ -23,6 +23,7 @@ Depends:
  , node-mkdirp
  , node-redis (>= 0.8.2)
  , node-async
+ , node-lockfile
 Description: Simple remoteStorage server
  reStore remoteStorage server written for Node.js. It is designed
  to be compatible with the 0.6 (RemoteStorage-2011.10) and 0.7
