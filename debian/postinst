@@ -38,6 +38,12 @@ case "$1" in
 			reload_apache restart
 		fi
 	fi
+	# create a node-restore group and user
+	if ! getent passwd node-restore >/dev/null 2>&1; then
+		adduser --system --no-create-home node-restore
+		addgroup --system node-restore
+		adduser node-restore node-restore
+	fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
