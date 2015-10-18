@@ -1,0 +1,13 @@
+Index: controllers/web_finger.js
+===================================================================
+--- controllers.orig/web_finger.js
++++ controllers/web_finger.js
+@@ -17,7 +17,7 @@ WebFinger.action('hostMeta', function(pa
+     response = {
+       'links': [ {
+         'rel': 'lrdd',
+-        'template': origin + '/webfinger/' + (useJSON ? 'jrd' : 'xrd') + '?resource={uri}'
++        'template': origin + '/restore/webfinger/' + (useJSON ? 'jrd' : 'xrd') + '?resource={uri}'
+       } ]
+     };
+     if (useJSON)
