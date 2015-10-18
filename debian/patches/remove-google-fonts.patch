@@ -1,0 +1,12 @@
+Index: views/layout.html
+===================================================================
+--- views.orig/layout.html
++++ views/layout.html
+@@ -3,7 +3,6 @@
+ <html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+-    <link href="<%= scheme %>://fonts.googleapis.com/css?family=Ubuntu+Mono|Open+Sans:400italic,400,700" rel="stylesheet" type="text/css">
+     <title><%= title %></title>
+     <link rel="stylesheet" type="text/css" href="/assets/style.css">
+   </head>
