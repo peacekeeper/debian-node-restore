@@ -1,13 +1,11 @@
-Index: controllers/web_finger.js
-===================================================================
---- controllers.orig/web_finger.js
-+++ controllers/web_finger.js
-@@ -17,7 +17,7 @@ WebFinger.action('hostMeta', function(pa
-     response = {
-       'links': [ {
-         'rel': 'lrdd',
--        'template': origin + '/webfinger/' + (useJSON ? 'jrd' : 'xrd') + '?resource={uri}'
-+        'template': origin + '/restore/webfinger/' + (useJSON ? 'jrd' : 'xrd') + '?resource={uri}'
-       } ]
-     };
-     if (useJSON)
+--- a/lib/controllers/web_finger.js
++++ b/lib/controllers/web_finger.js
+@@ -7,7 +7,7 @@ WebFinger.PROTOCOL_VERSION = 'draft-dejo
+
+ WebFinger.action('hostMeta', function(pathname, extension) {
+   var resource = this.params.resource,
+-      origin   = this.getOrigin(),
++      origin   = this.getOrigin() + "/restore",
+       json     = (extension === '.json'),
+       useJRD   = (pathname === 'webfinger'),
+       useJSON  = useJRD || (pathname === 'host-meta' && json),

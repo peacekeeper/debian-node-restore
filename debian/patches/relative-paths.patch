@@ -1,61 +1,53 @@
-Index: views/auth.html
-===================================================================
---- views.orig/auth.html
-+++ views/auth.html
+--- a/lib/views/auth.html
++++ b/lib/views/auth.html
 @@ -16,7 +16,7 @@
      <p class="error"><%= error %></p>
    <% } %>
  
 -  <form method="POST" action="/oauth">
-+  <form method="POST" action="./oauth">
++  <form method="POST" action="/restore/oauth">
      <input type="hidden" name="client_id" value="<%= client_id %>">
      <input type="hidden" name="redirect_uri" value="<%= redirect_uri %>">
      <input type="hidden" name="response_type" value="<%= response_type %>">
-Index: views/index.html
-===================================================================
---- views.orig/index.html
-+++ views/index.html
+--- a/lib/views.orig/index.html
++++ b/lib/views/index.html
 @@ -1,4 +1,4 @@
 -<p><img src="/assets/remotestorage.svg"></p>
-+<p><img src="./assets/remotestorage.svg"></p>
++<p><img src="/restore/assets/remotestorage.svg"></p>
  
  <p>This is <em>reStore</em>, an open-source <a
    href="http://remotestorage.io/">remoteStorage</a> server. If you would like
-Index: views/layout.html
-===================================================================
---- views.orig/layout.html
-+++ views/layout.html
+--- a/lib/views.orig/layout.html
++++ b/lib/views/layout.html
 @@ -4,17 +4,17 @@
    <head>
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
      <title><%= title %></title>
 -    <link rel="stylesheet" type="text/css" href="/assets/style.css">
-+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
++    <link rel="stylesheet" type="text/css" href="/restore/assets/style.css">
    </head>
    <body>
  
      <div class="header">
        <div class="sub">
 -        <h1><span>Remote Storage</span> <a href="/"><%= host %></a></h1>
-+        <h1><span>Remote Storage</span> <a href="./"><%= host %></a></h1>
++        <h1><span>Remote Storage</span> <a href="/restore/"><%= host %></a></h1>
  
          <ul class="nav">
 -          <li><a href="/">Home</a></li>
 -          <% if (signup) { %><li><a href="/signup">Sign up</a></li><% } %>
 +          <li><a href="./">Home</a></li>
-+          <% if (signup) { %><li><a href="./signup">Sign up</a></li><% } %>
++          <% if (signup) { %><li><a href="/restore/signup">Sign up</a></li><% } %>
          </ul>
        </div>
      </div>
-Index: views/signup.html
-===================================================================
---- views.orig/signup.html
-+++ views/signup.html
+--- a/lib/views.orig/signup.html
++++ b/lib/views/signup.html
 @@ -1,6 +1,6 @@
  <h2>Sign up</h2>
  
 -<form method="post" action="/signup">
-+<form method="post" action="./signup">
++<form method="post" action="/restore/signup">
    <% if (error) { %>
      <p class="error"><%= error.message %></p>
    <% } %>

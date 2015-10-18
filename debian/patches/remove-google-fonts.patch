@@ -1,7 +1,5 @@
-Index: views/layout.html
-===================================================================
---- views.orig/layout.html
-+++ views/layout.html
+--- a/lib/views/layout.html
++++ b/lib/views/layout.html
 @@ -3,7 +3,6 @@
  <html>
    <head>
