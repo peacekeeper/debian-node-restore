@@ -17,6 +17,7 @@ Package: node-restore
 Architecture: all
 Depends:
  ${misc:Depends}
+ , adduser
  , nodejs
  , libjs-ejs
  , node-ejs
