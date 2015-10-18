@@ -1,3 +1,12 @@
+node-restore (0.3.0-3) UNRELEASED; urgency=low
+
+  [ Markus Sabadello ]
+  * Adding another path mapping to Proxy.
+  * Changing webfinger path to /restore/webfinger.
+  * Adding patches.
+
+ -- Markus Sabadello <markus@projectdanube.org>  Sun, 18 Oct 2015 18:13:45 +0200
+
 node-restore (0.3.0-2) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
