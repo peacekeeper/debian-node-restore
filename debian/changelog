@@ -1,3 +1,11 @@
+node-restore (0.3.0-2) UNRELEASED; urgency=low
+
+  [ Markus Sabadello ]
+  * New init script
+  * Create node-restore user and group
+
+ -- Markus Sabadello <markus@projectdanube.org>  Sun, 18 Oct 2015 13:36:36 +0200
+
 node-restore (0.3.0-1) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
