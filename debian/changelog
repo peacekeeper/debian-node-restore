@@ -1,3 +1,15 @@
+node-restore (0.3.0-4) UNRELEASED; urgency=low
+
+  [ Markus Sabadello ]
+  * Use /restore/ path.
+  * Add adduser dependency, and fix adduser syntax.
+  * Create /var/log directory.
+  * Create /var/lib directory
+  * Remove script for default user.
+  * Simplify apache config, and use redirect.
+
+ -- Markus Sabadello <markus@projectdanube.org>  Mon, 19 Oct 2015 13:08:35 +0200
+
 node-restore (0.3.0-3) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
