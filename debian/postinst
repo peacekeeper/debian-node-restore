@@ -44,9 +44,12 @@ case "$1" in
 		addgroup --system node-restore
 		adduser node-restore node-restore
 	fi
-	# create a log directory
+	# create a /var/log directory
 	mkdir -p /var/log/node-restore/    
 	chown node-restore:node-restore /var/log/node-restore/
+	# create a /var/lib directory
+	mkdir -p /var/lib/nodejs/restore/
+	chown node-restore:node-restore /var/lib/nodejs/restore/
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
