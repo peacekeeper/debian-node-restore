@@ -1,3 +1,15 @@
+node-restore (0.3.0-5) UNRELEASED; urgency=low
+
+  [ Markus Sabadello ]
+  * Adding bugfix for timestamp problem:
+    https://github.com/jcoglan/restore/issues/37
+  * Disabling If-None-Match header because of Apache bug:
+    https://bz.apache.org/bugzilla/show_bug.cgi?id=51223
+  * Remove user, group, and directories on "purge".
+  * Force SSL.
+
+ -- Markus Sabadello <markus@projectdanube.org>  Wed, 21 Oct 2015 17:33:22 +0200
+
 node-restore (0.3.0-4) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
