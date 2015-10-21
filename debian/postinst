@@ -45,6 +45,8 @@ case "$1" in
 			reload_apache restart
 		fi
 	fi
+	# start node-restore
+	invoke-rc.d node-restore start
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
