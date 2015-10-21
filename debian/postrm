@@ -6,8 +6,14 @@ set -e
 
 case "$1" in
     purge)
-        # Remove generated config and log files.
-	rm -f /var/log/node-restore.log*
+	# remove node-restore group and user
+	deluser node-restore
+	delgroup node-restore
+	# delete /var/log directory
+	rm -rf /var/log/node-restore/
+	# delete /var/lib directory
+	rm -rf /var/lib/nodejs/restore/
+	# configure apache
 	CONF="node-restore"
 	COMMON_STATE=$(dpkg-query -f '${Status}' -W 'apache2.2-common' 2>/dev/null | awk '{print $3}' || true)
 	if [ -e /usr/share/apache2/apache2-maintscript-helper ] && [ -L /etc/apache2/conf-enabled/$CONF.conf ] ; then
@@ -16,8 +22,6 @@ case "$1" in
 	elif [ "$COMMON_STATE" = "installed" ] || [ "$COMMON_STATE" = "unpacked" ] ; then
 		[ -L /etc/apache2/conf.d/$CONF.conf ] && rm /etc/apache2/conf.d/$CONF.conf
 	fi
-	# Remove storage files.
-	rm -rf /var/lib/nodejs/restore
     ;;
 
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
