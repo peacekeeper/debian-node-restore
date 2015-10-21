@@ -20,12 +20,6 @@ reload_apache()
 
 case "$1" in
     configure)
-	# create a node-restore group and user
-	if ! getent passwd node-restore >/dev/null 2>&1; then
-		adduser --system --no-create-home --home /nonexistent node-restore
-		addgroup --system node-restore
-		adduser node-restore node-restore
-	fi
 	# create a /var/log directory
 	mkdir -p /var/log/node-restore/    
 	chown node-restore:node-restore /var/log/node-restore/

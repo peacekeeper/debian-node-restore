@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+case "$1" in
+    install|upgrade)
+	# create a node-restore group and user
+	if ! getent passwd node-restore >/dev/null 2>&1; then
+		adduser --system --no-create-home --home /nonexistent node-restore
+		addgroup --system node-restore
+		adduser node-restore node-restore
+	fi
+    ;;
+
+    abort-upgrade)
+    ;;
+
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0
