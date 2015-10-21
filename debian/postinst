@@ -20,6 +20,19 @@ reload_apache()
 
 case "$1" in
     configure)
+	# create a node-restore group and user
+	if ! getent passwd node-restore >/dev/null 2>&1; then
+		adduser --system --no-create-home --home /nonexistent node-restore
+		addgroup --system node-restore
+		adduser node-restore node-restore
+	fi
+	# create a /var/log directory
+	mkdir -p /var/log/node-restore/    
+	chown node-restore:node-restore /var/log/node-restore/
+	# create a /var/lib directory
+	mkdir -p /var/lib/nodejs/restore/
+	chown node-restore:node-restore /var/lib/nodejs/restore/
+	# configure Apache
 	CONF="node-restore"
 	COMMON_STATE=$(dpkg-query -f '${Status}' -W 'apache2.2-common' 2>/dev/null | awk '{print $3}' || true)
 	if [ -e /usr/share/apache2/apache2-maintscript-helper ] ; then
@@ -38,18 +51,6 @@ case "$1" in
 			reload_apache restart
 		fi
 	fi
-	# create a node-restore group and user
-	if ! getent passwd node-restore >/dev/null 2>&1; then
-		adduser --system --no-create-home --home /nonexistent node-restore
-		addgroup --system node-restore
-		adduser node-restore node-restore
-	fi
-	# create a /var/log directory
-	mkdir -p /var/log/node-restore/    
-	chown node-restore:node-restore /var/log/node-restore/
-	# create a /var/lib directory
-	mkdir -p /var/lib/nodejs/restore/
-	chown node-restore:node-restore /var/lib/nodejs/restore/
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
