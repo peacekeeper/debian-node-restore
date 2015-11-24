@@ -8,7 +8,14 @@ node-restore (0.3.0-5) UNRELEASED; urgency=low
   * Remove user, group, and directories on "purge".
   * Force SSL.
 
- -- Markus Sabadello <markus@projectdanube.org>  Wed, 21 Oct 2015 17:33:22 +0200
+  [ Sunil Mohan Adapa ]
+  * Simplify handling apache2 configuration
+  * Let debhelper handle daemon start/stop
+  * Ignore temporary debian files
+  * Do not start daemon before directory creation
+  * Improve user/group creation
+
+ -- Markus Sabadello <markus@projectdanube.org>  Tue, 24 Nov 2015 10:14:38 +0100
 
 node-restore (0.3.0-4) UNRELEASED; urgency=low
 
