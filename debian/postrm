@@ -7,8 +7,8 @@ set -e
 case "$1" in
     purge)
 	# remove node-restore group and user
-	deluser node-restore
-	delgroup node-restore
+	deluser node-restore || true
+	delgroup node-restore || true
 	# delete /var/log directory
 	rm -rf /var/log/node-restore/
 	# delete /var/lib directory
