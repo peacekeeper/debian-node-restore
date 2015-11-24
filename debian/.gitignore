@@ -3,3 +3,4 @@ node-restore*.debhelper
 node-restore.substvars
 node-restore
 files
+*~
