@@ -7,6 +7,7 @@ Build-Depends:
  debhelper (>= 8)
  , dh-apache2
  , dh-buildinfo
+ , dh-systemd
  , nodejs
 Standards-Version: 3.9.6
 Homepage: http://github.com/jcoglan/restore
