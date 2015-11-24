@@ -12,8 +12,6 @@ case "$1" in
 	# create a /var/lib directory
 	mkdir -p /var/lib/nodejs/restore/
 	chown node-restore:node-restore /var/lib/nodejs/restore/
-	# start node-restore
-	invoke-rc.d node-restore start
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
