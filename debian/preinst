@@ -17,6 +17,7 @@ case "$1" in
 			--no-create-home \
 			--home /var/lib/nodejs/restore \
 			--disabled-password \
+			--gecos "reStore Server" \
 			node-restore
 	fi
     ;;
