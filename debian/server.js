@@ -5,7 +5,7 @@ var reStore = require('restore'),
 
     server  = new reStore({
                 store:  store,
-                http:   {port: process.env.PORT},
+                http:   {host: '127.0.0.1', port: process.env.PORT},
                 allow:  {signup:true}
               });
 
