@@ -15,7 +15,7 @@ case "$1" in
 		adduser --system \
 			--ingroup node-restore \
 			--no-create-home \
-			--home /var/lib/nodejs/restore \
+			--home /var/lib/node-restore \
 			--disabled-password \
 			--gecos "reStore Server" \
 			node-restore

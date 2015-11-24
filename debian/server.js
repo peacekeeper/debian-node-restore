@@ -1,7 +1,7 @@
 process.umask(077);
 
 var reStore = require('restore'),
-    store   = new reStore.FileTree({path: '/var/lib/nodejs/restore/storage'}),
+    store   = new reStore.FileTree({path: '/var/lib/node-restore/storage'}),
 
     server  = new reStore({
                 store:  store,

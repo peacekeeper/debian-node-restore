@@ -12,7 +12,7 @@ case "$1" in
 	# delete /var/log directory
 	rm -rf /var/log/node-restore/
 	# delete /var/lib directory
-	rm -rf /var/lib/nodejs/restore/
+	rm -rf /var/lib/node-restore/
     ;;
 
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

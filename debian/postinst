@@ -8,8 +8,8 @@ case "$1" in
 	mkdir -p /var/log/node-restore/    
 	chown node-restore:node-restore /var/log/node-restore/
 	# create a /var/lib directory
-	mkdir -p /var/lib/nodejs/restore/
-	chown node-restore:node-restore /var/lib/nodejs/restore/
+	mkdir -p /var/lib/node-restore/
+	chown node-restore:node-restore /var/lib/node-restore/
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
