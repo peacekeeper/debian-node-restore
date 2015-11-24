@@ -4,20 +4,6 @@ set -e
 
 #DEBHELPER#
 
-reload_apache()
-{
-    if apache2ctl configtest 2>/dev/null; then
-	if [ -x /usr/sbin/invoke-rc.d ]; then
-            invoke-rc.d apache2 $1 3>/dev/null || true
-	else
-            /etc/init.d/apache2 $1 3>/dev/null || true
-	fi
-    else
-        echo "Your Apache 2 configuration is broken, so we're not restarting it for you."
-    fi
-}
-
-
 case "$1" in
     configure)
 	# create a /var/log directory
@@ -26,25 +12,6 @@ case "$1" in
 	# create a /var/lib directory
 	mkdir -p /var/lib/nodejs/restore/
 	chown node-restore:node-restore /var/lib/nodejs/restore/
-	# configure Apache
-	CONF="node-restore"
-	COMMON_STATE=$(dpkg-query -f '${Status}' -W 'apache2.2-common' 2>/dev/null | awk '{print $3}' || true)
-	if [ -e /usr/share/apache2/apache2-maintscript-helper ] ; then
-		. /usr/share/apache2/apache2-maintscript-helper
-		if [ -e /etc/apache2/conf-available/$CONF.conf ] ; then
-			apache2_invoke enconf $CONF || exit $?
-		fi
-	elif [ "$COMMON_STATE" = "installed" ] || [ "$COMMON_STATE" = "unpacked" ] ; then
-		if [ -d /etc/apache2/conf.d/ ] && [ ! -L /etc/apache2/conf.d/$CONF.conf ] ; then
-			ln -s ../conf-available/$CONF.conf /etc/apache2/conf.d/$CONF.conf
-		fi
-		# Test whether a2enmod is available (and thus also apache2ctl).
-		if [ -x /usr/sbin/a2enmod ]; then
-			# Restart Apache to really enable the module and load
-			# /etc/apache2/conf.d/restore.conf.
-			reload_apache restart
-		fi
-	fi
 	# start node-restore
 	invoke-rc.d node-restore start
     ;;

@@ -5,6 +5,7 @@ Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.deb
 Uploaders: Markus Sabadello <markus@projectdanube.org>
 Build-Depends:
  debhelper (>= 8)
+ , dh-apache2
  , dh-buildinfo
  , nodejs
 Standards-Version: 3.9.6
@@ -25,6 +26,7 @@ Depends:
  , node-redis (>= 0.8.2)
  , node-async
  , node-lockfile
+Recommends: ${misc:Recommends}
 Description: Simple remoteStorage server
  reStore remoteStorage server written for Node.js. It is designed
  to be compatible with the 0.6 (RemoteStorage-2011.10) and 0.7
