@@ -6,11 +6,18 @@ set -e
 
 case "$1" in
     install|upgrade)
-	# create a node-restore group and user
-	if ! getent passwd node-restore >/dev/null 2>&1; then
-		adduser --system --no-create-home --home /nonexistent node-restore
+	# create a node-restore group
+	if ! getent group node-restore >/dev/null 2>&1; then
 		addgroup --system node-restore
-		adduser node-restore node-restore
+	fi
+	# create a node-restore user
+	if ! getent passwd node-restore >/dev/null 2>&1; then
+		adduser --system \
+			--ingroup node-restore \
+			--no-create-home \
+			--home /var/lib/nodejs/restore \
+			--disabled-password \
+			node-restore
 	fi
     ;;
 
