@@ -21,6 +21,9 @@ case "$1" in
     ;;
 esac
 
+# Make sure to perform remaining configuration after creating proper
+# directories.
+
 #DEBHELPER#
 
 exit 0
