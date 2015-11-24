@@ -29,8 +29,13 @@ Depends:
  , node-lockfile
 Recommends: ${misc:Recommends}
 Description: Simple remoteStorage server
- reStore remoteStorage server written for Node.js. It is designed
- to be compatible with the 0.6 (RemoteStorage-2011.10) and 0.7
- (RemoteStorage-2012.04, draft-dejong-00) versions of remoteStorage.js.
+ reStore remoteStorage server written in Node.js. remoteStorage is a
+ protocol for storing data at a storage provider of user's choice or
+ user's own storage server while using compatible applications on the
+ web.
+ .
+ reStore is designed to be compatible with the 0.6
+ (RemoteStorage-2011.10) and 0.7 (RemoteStorage-2012.04,
+ draft-dejong-00) versions of remoteStorage protocol.
  .
  Node.js is an event-based server-side JavaScript engine.
