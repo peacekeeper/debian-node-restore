@@ -1,0 +1,15 @@
+[Unit]
+Description=reStore remoteStorage server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/nodejs /usr/lib/nodejs/restore/server.js
+Restart=on-failure
+User=node-restore
+Group=node-restore
+Environment="PORT=8020"
+Environment="NODE_ENV=production"
+Environment="NODE_CONFIG_DIR=/usr/lib/nodejs/restore"
+
+[Install]
+WantedBy=multi-user.target
