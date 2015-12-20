@@ -25,7 +25,7 @@ node-restore (0.3.0-5) UNRELEASED; urgency=low
   * Use /var/lib/node-restore for data
   * Expand package description
 
- -- Markus Sabadello <markus@projectdanube.org>  Sun, 20 Dec 2015 16:19:10 +0100
+ -- Markus Sabadello <markus@danubetech.com>  Sun, 20 Dec 2015 16:19:10 +0100
 
 node-restore (0.3.0-4) UNRELEASED; urgency=low
 
@@ -37,7 +37,7 @@ node-restore (0.3.0-4) UNRELEASED; urgency=low
   * Remove script for default user.
   * Simplify apache config, and use redirect.
 
- -- Markus Sabadello <markus@projectdanube.org>  Mon, 19 Oct 2015 13:08:35 +0200
+ -- Markus Sabadello <markus@danubetech.com>  Mon, 19 Oct 2015 13:08:35 +0200
 
 node-restore (0.3.0-3) UNRELEASED; urgency=low
 
@@ -46,7 +46,7 @@ node-restore (0.3.0-3) UNRELEASED; urgency=low
   * Changing webfinger path to /restore/webfinger.
   * Adding patches.
 
- -- Markus Sabadello <markus@projectdanube.org>  Sun, 18 Oct 2015 18:13:45 +0200
+ -- Markus Sabadello <markus@danubetech.com>  Sun, 18 Oct 2015 18:13:45 +0200
 
 node-restore (0.3.0-2) UNRELEASED; urgency=low
 
@@ -54,7 +54,7 @@ node-restore (0.3.0-2) UNRELEASED; urgency=low
   * New init script
   * Create node-restore user and group
 
- -- Markus Sabadello <markus@projectdanube.org>  Sun, 18 Oct 2015 13:36:36 +0200
+ -- Markus Sabadello <markus@danubetech.com>  Sun, 18 Oct 2015 13:36:36 +0200
 
 node-restore (0.3.0-1) UNRELEASED; urgency=low
 
@@ -64,21 +64,21 @@ node-restore (0.3.0-1) UNRELEASED; urgency=low
   * Change <Proxy *> to more restrictive URL.
   * Map all paths to /restore/.
 
- -- Markus Sabadello <markus@projectdanube.org>  Fri, 16 Oct 2015 10:43:55 +0200
+ -- Markus Sabadello <markus@danubetech.com>  Fri, 16 Oct 2015 10:43:55 +0200
 
 node-restore (0.2.0-4) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
   * More reliably disabling Apache2 conf.
 
- -- Markus Sabadello <markus@projectdanube.org>  Thu, 05 Mar 2015 15:50:23 +0100
+ -- Markus Sabadello <markus@danubetech.com>  Thu, 05 Mar 2015 15:50:23 +0100
 
 node-restore (0.2.0-3) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
   * Remove storage files after purge.
 
- -- Markus Sabadello <markus@projectdanube.org>  Thu, 05 Mar 2015 15:28:58 +0100
+ -- Markus Sabadello <markus@danubetech.com>  Thu, 05 Mar 2015 15:28:58 +0100
 
 node-restore (0.2.0-2) UNRELEASED; urgency=low
 
@@ -87,11 +87,11 @@ node-restore (0.2.0-2) UNRELEASED; urgency=low
   * Added Apache configuration
   * Allow sign-up for storage
 
- -- Markus Sabadello <markus@projectdanube.org>  Wed, 04 Mar 2015 16:42:44 +0100
+ -- Markus Sabadello <markus@danubetech.com>  Wed, 04 Mar 2015 16:42:44 +0100
 
 node-restore (0.2.0-1) UNRELEASED; urgency=low
 
   [ Markus Sabadello ]
   * Initial release
 
- -- Markus Sabadello <markus@projectdanube.org>  Mon, 03 Feb 2015 16:14:31 +0100
+ -- Markus Sabadello <markus@danubetech.com>  Mon, 03 Feb 2015 16:14:31 +0100

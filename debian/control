@@ -2,7 +2,7 @@ Source: node-restore
 Section: web
 Priority: extra
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
-Uploaders: Markus Sabadello <markus@projectdanube.org>
+Uploaders: Markus Sabadello <markus@danubetech.com>
 Build-Depends:
  debhelper (>= 8)
  , dh-apache2
