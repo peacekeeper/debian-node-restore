@@ -1,4 +1,4 @@
-node-restore (0.3.0-1) UNRELEASED; urgency=low
+node-restore (0.3.0-1) unstable; urgency=low
 
   [ Markus Sabadello ]
   * Ready for upload (Closes: #795869)
