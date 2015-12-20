@@ -1,7 +1,7 @@
 node-restore (0.3.0-1) unstable; urgency=low
 
   [ Markus Sabadello ]
-  * Ready for upload (Closes: #795869)
+  * Ready for upload (Closes: #804507)
   * Adding bugfix for timestamp problem:
     https://github.com/jcoglan/restore/issues/37
   * Disabling If-None-Match header because of Apache bug:
