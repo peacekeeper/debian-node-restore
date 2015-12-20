@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
 Uploaders: Markus Sabadello <markus@danubetech.com>
 Build-Depends:
- debhelper (>= 8)
+ debhelper (>= 9)
  , dh-apache2
  , dh-buildinfo
  , dh-systemd
