@@ -11,8 +11,8 @@ Build-Depends:
  , nodejs
 Standards-Version: 3.9.7
 Homepage: http://github.com/jcoglan/restore
-Vcs-Git: git://anonscm.debian.org/pkg-javascript/node-restore.git
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-javascript/node-restore.git
+Vcs-Git: https://anonscm.debian.org/pkg-javascript/node-restore.git
+Vcs-Browser: https://anonscm.debian.org/gitweb/?p=pkg-javascript/node-restore.git
 
 Package: node-restore
 Architecture: all
