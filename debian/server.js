@@ -1,3 +1,11 @@
+/*
+ * Upstream "restore" is basically a library that can be used
+ * to run a remoteStorage server. This requires a simple script
+ * which is not part of upstream, but supplied here in this file.
+ * This is based on an example provided in the upstream README:
+ * https://github.com/jcoglan/restore
+ */
+
 process.umask(077);
 
 var reStore = require('restore'),
