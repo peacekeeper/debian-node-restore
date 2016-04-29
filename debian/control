@@ -9,7 +9,7 @@ Build-Depends:
  , dh-buildinfo
  , dh-systemd
  , nodejs
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: http://github.com/jcoglan/restore
 Vcs-Git: git://anonscm.debian.org/pkg-javascript/node-restore.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-javascript/node-restore.git
