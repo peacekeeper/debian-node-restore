@@ -1,3 +1,5 @@
+With our package's Apache configuration, we will expose node-restore under path /restore.
+Therefore we are adjusting paths in the Webfinger response here.
 --- a/lib/controllers/web_finger.js
 +++ b/lib/controllers/web_finger.js
 @@ -7,7 +7,7 @@ WebFinger.PROTOCOL_VERSION = 'draft-dejo

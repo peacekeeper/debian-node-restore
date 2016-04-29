@@ -1,3 +1,5 @@
+With our package's Apache configuration, we will expose node-restore under path /restore.
+Therefore we are adjusting links in the HTML here.
 --- a/lib/views/auth.html
 +++ b/lib/views/auth.html
 @@ -16,7 +16,7 @@

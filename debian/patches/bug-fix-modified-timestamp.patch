@@ -1,3 +1,5 @@
+This patch fixes upstream bug "Inconsistency in etag calculation":
+https://github.com/jcoglan/restore/issues/37
 --- a/lib/stores/file_tree.js
 +++ b/lib/stores/file_tree.js
 @@ -195,7 +195,7 @@ FileTree.prototype.get = function(username, path, version, callback) {

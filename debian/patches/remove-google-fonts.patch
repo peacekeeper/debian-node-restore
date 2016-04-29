@@ -1,3 +1,4 @@
+This patch removes Google Fonts CSS to improve privacy.
 --- a/lib/views/layout.html
 +++ b/lib/views/layout.html
 @@ -3,7 +3,6 @@

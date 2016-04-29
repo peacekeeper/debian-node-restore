@@ -1,3 +1,9 @@
+node-restore (0.3.0-2) UNRELEASED; urgency=low
+
+  * Adding comments to patch files.
+
+ -- Markus Sabadello <markus@danubetech.com>  Fri, 29 Apr 2016 16:54:11 +0200
+
 node-restore (0.3.0-1) unstable; urgency=low
 
   [ Markus Sabadello ]
